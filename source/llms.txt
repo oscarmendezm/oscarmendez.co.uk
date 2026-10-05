@@ -1,0 +1,33 @@
+# Dr Oscar Mendez
+
+> Dr Oscar Mendez (Oscar Mendez Maldonado) is a physical AI leader based in Surrey, UK. He is Director of AI & Data Science at Locus Robotics, where he leads AI for an autonomous mobile robot fleet operating at more than 350 sites worldwide, and a Visiting Associate Professor in Robotics and AI at the University of Surrey's Centre for Vision, Speech and Signal Processing (CVSSP).
+
+Key facts:
+
+- Current roles: Director of AI & Data Science, Locus Robotics (2025 to present; previously Machine Vision Lead, 2023 to 2025). Visiting Associate Professor in Robotics and AI, University of Surrey (2021 to present).
+- Focus: physical and embodied AI; taking perception and decision-making models from research to robots in production; AI strategy for customers, investors and boards.
+- Awards: ICRA 2022 Best Paper Award ("Translating Images into Maps"); Sullivan Doctoral Thesis Prize 2018 for the best UK computer vision PhD thesis.
+- Record: 38 papers at venues including CVPR, ICCV, ICRA and IROS; four granted US patents (sensor calibration, water/non-water segmentation, bird's-eye-view semantic mapping) and one pending (warehouse labour orchestration).
+- Research areas: bird's-eye-view mapping, localisation and geo-localisation, SLAM, 3D reconstruction, Gaussian splatting, hyperspectral sensing, human pose estimation, graph learning.
+- Education: PhD in Robotics, Computer Vision and AI (University of Surrey, CVSSP); BEng (Hons) Electronic and Computer Engineering, First Class (University of Surrey).
+- Service and memberships: Sponsorship Chair, Executive Committee of the British Machine Vision Association; Fellow of the Higher Education Academy (FHEA); IEEE Member; Associate of the IET.
+
+## Pages
+
+- [Home](https://oscarmendez.co.uk/): overview, key achievements and contact
+- [Leadership](https://oscarmendez.co.uk/leadership/): roles and responsibilities at Locus Robotics and the University of Surrey
+- [Research](https://oscarmendez.co.uk/research/): research themes, funded projects, researchers supervised, the SeDAR dataset
+- [Publications](https://oscarmendez.co.uk/publications/): full list of papers and patents
+- [Media and talks](https://oscarmendez.co.uk/media/): press coverage and interviews
+
+## Profiles
+
+- [ORCID](https://orcid.org/0000-0003-4904-4349): 0000-0003-4904-4349
+- [LinkedIn](https://www.linkedin.com/in/oscarmendez89)
+- [Google Scholar](https://scholar.google.com/citations?user=Vm8E3pYAAAAJ)
+- [GitHub](https://github.com/oscarmendezm)
+- [University of Surrey staff page](https://www.surrey.ac.uk/people/oscar-mendez-maldonado)
+
+## Contact
+
+- Email: me@oscarmendez.co.uk
