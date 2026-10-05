@@ -59,6 +59,8 @@ for key, (path, title, desc) in PAGES.items():
                "hasPart": [{"@id": a["@id"]} for a in articles]}] + articles
     ld = json.dumps({"@context": "https://schema.org", "@graph": g}, ensure_ascii=False).replace("</", "<\\/")
     h = re.sub(r'(<script type="application/ld\+json" id="jsonld">).*?(</script>)', lambda m: m.group(1) + ld + m.group(2), h, 1, re.S)
+    # embedded preview images become real files on the published site
+    h = re.sub(r'src="data:image/[a-z]+;base64,[A-Za-z0-9+/=]+" data-file="([^"]+)"', r'src="/\1"', h)
     h = h.replace("<body>", f'<body data-static="1" data-page="{key}">', 1)
     h = h.replace('href="#/"', 'href="/"')
     h = re.sub(r'href="#/(\w+)"', r'href="/\1/"', h)
@@ -72,6 +74,8 @@ open(os.path.join(out, "sitemap.xml"), "w").write(
 open(os.path.join(out, "robots.txt"), "w").write(
  "# Search engines and AI assistants are welcome to read and cite this site.\nUser-agent: *\nAllow: /\n\n"
  f"Sitemap: {SITE}/sitemap.xml\n")
+if os.path.isdir(os.path.join(HERE, "images")):
+    shutil.copytree(os.path.join(HERE, "images"), os.path.join(out, "images"), dirs_exist_ok=True)
 for extra in ("llms.txt", "og-image.png", "OscarMendezCV.pdf"):
     p = os.path.join(HERE, extra)
     if os.path.exists(p): shutil.copy(p, os.path.join(out, extra))
