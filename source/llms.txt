@@ -18,7 +18,12 @@ Key facts:
 - [Leadership](https://oscarmendez.co.uk/leadership/): roles and responsibilities at Locus Robotics and the University of Surrey
 - [Research](https://oscarmendez.co.uk/research/): research themes, funded projects, researchers supervised, the SeDAR dataset
 - [Publications](https://oscarmendez.co.uk/publications/): full list of papers and patents
+- [Writing](https://oscarmendez.co.uk/writing/): essays on physical AI and engineering leadership
 - [Media and talks](https://oscarmendez.co.uk/media/): press coverage and interviews
+
+## Writing
+
+- [The burden of proof should be on the AI](https://oscarmendez.co.uk/writing/burden-of-proof/) (November 2026): in physical AI, AI-written code should arrive with evidence (intent, tests, simulation, visuals) matched to each level of seniority, so validation follows the organisation and the AI keeps the audit trail.
 
 ## Profiles
 

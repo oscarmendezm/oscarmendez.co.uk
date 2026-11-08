@@ -200,6 +200,7 @@ footer.site a{color:var(--muted)}
         <li><a href="#/leadership" data-link="leadership">Leadership</a></li>
         <li><a href="#/research" data-link="research">Research</a></li>
         <li><a href="#/publications" data-link="publications">Publications</a></li>
+        <li><a href="#/writing" data-link="writing">Writing</a></li>
         <li><a href="#/media" data-link="media">Media &amp; talks</a></li>
       </ul>
     </nav>
@@ -454,6 +455,19 @@ footer.site a{color:var(--muted)}
   </div>
 </div>
 
+<!-- WRITING -->
+<div class="page" data-page="writing">
+  <div class="wrap page-top">
+    <h1>Writing</h1>
+    <p class="lede">Essays on physical AI, engineering leadership and building AI-native teams.</p>
+  </div>
+  <div class="wrap" style="padding-bottom:5rem">
+    <ul class="clean media-list">
+      <li><a href="/writing/burden-of-proof/"><div><h3>The burden of proof should be on the AI</h3><span class="src">How engineering practice needs to change to adopt AI for software development in physical AI.</span></div><span class="src">Nov 2026</span></a></li>
+    </ul>
+  </div>
+</div>
+
 <!-- MEDIA -->
 <div class="page" data-page="media">
   <div class="wrap page-top">
@@ -496,7 +510,7 @@ footer.site a{color:var(--muted)}
   // ---------- router ----------
   var pages=document.querySelectorAll('.page'), links=document.querySelectorAll('[data-link]');
   var nav=document.getElementById('nav'), menuBtn=document.getElementById('menuBtn');
-  var titles={home:'Physical AI leader',leadership:'Leadership',research:'Research',publications:'Publications',media:'Media and talks'};
+  var titles={home:'Physical AI leader',leadership:'Leadership',research:'Research',publications:'Publications',writing:'Writing',media:'Media and talks'};
   var STATIC=document.body.dataset.static==='1';
   function route(){
     var key=STATIC?document.body.dataset.page:(location.hash.replace(/^#\/?/,'')||'home');

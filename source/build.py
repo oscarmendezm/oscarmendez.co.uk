@@ -17,6 +17,8 @@ PAGES = {
    "Oscar Mendez's research in bird's-eye-view mapping, localisation, Gaussian splatting, hyperspectral sensing and embodied AI, plus funded projects, researchers supervised and the SeDAR dataset."),
  "publications": ("/publications/", "Publications · Dr Oscar Mendez",
    "Publications and patents by Oscar Mendez: 38 papers at venues including CVPR, ICCV, ICRA and IROS, the ICRA 2022 Best Paper, and four US patents."),
+ "writing": ("/writing/", "Writing · Dr Oscar Mendez",
+   "Essays by Dr Oscar Mendez on physical AI, engineering leadership and AI-native software development."),
  "media": ("/media/", "Media and talks · Dr Oscar Mendez",
    "Press coverage, interviews and talks featuring Dr Oscar Mendez, including the Sullivan Doctoral Thesis Prize and Autonomous Valet Parking."),
 }
@@ -68,9 +70,15 @@ for key, (path, title, desc) in PAGES.items():
     d = os.path.join(out, path.strip("/"))
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(h)
+# standalone article pages: source/writing/<slug>/index.html are copied as-is
+ARTICLES = sorted(d for d in os.listdir(os.path.join(HERE, "writing"))
+                  if os.path.isfile(os.path.join(HERE, "writing", d, "index.html"))) if os.path.isdir(os.path.join(HERE, "writing")) else []
+for a in ARTICLES:
+    shutil.copytree(os.path.join(HERE, "writing", a), os.path.join(out, "writing", a), dirs_exist_ok=True)
+sitemap_paths = [p for p, _, _ in PAGES.values()] + [f"/writing/{a}/" for a in ARTICLES]
 open(os.path.join(out, "sitemap.xml"), "w").write(
  '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
- "".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>\n" for p, _, _ in PAGES.values()) + "</urlset>\n")
+ "".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>\n" for p in sitemap_paths) + "</urlset>\n")
 open(os.path.join(out, "robots.txt"), "w").write(
  "# Search engines and AI assistants are welcome to read and cite this site.\nUser-agent: *\nAllow: /\n\n"
  f"Sitemap: {SITE}/sitemap.xml\n")
@@ -91,4 +99,4 @@ a{display:inline-block;margin-top:1rem;background:#F2A93B;color:#1A1206;font-wei
 """)
 if not os.path.exists(os.path.join(out, "OscarMendezCV.pdf")):
     print("note: source/OscarMendezCV.pdf not found, so the Download CV button has nothing to serve yet")
-print("built", len(PAGES), "pages into", out)
+print("built", len(PAGES), "pages and", len(ARTICLES), "articles into", out)

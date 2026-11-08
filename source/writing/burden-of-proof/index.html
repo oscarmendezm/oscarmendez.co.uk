@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The burden of proof should be on the AI · Dr Oscar Mendez</title>
+<meta name="description" content="How engineering practice needs to change to adopt AI for software development in physical AI. The AI should prove itself right, not the person signing off.">
+<meta name="author" content="Dr Oscar Mendez">
+<meta name="theme-color" content="#0A1322">
+<link rel="canonical" href="https://oscarmendez.co.uk/writing/burden-of-proof/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The burden of proof should be on the AI">
+<meta property="og:description" content="We shouldn't ask engineers to trust AI. The AI should have to earn it.">
+<meta property="og:url" content="https://oscarmendez.co.uk/writing/burden-of-proof/">
+<meta property="og:image" content="https://oscarmendez.co.uk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://oscarmendez.co.uk/writing/burden-of-proof/#article","headline":"The burden of proof should be on the AI","description":"How engineering practice needs to change to adopt AI for software development in physical AI.","url":"https://oscarmendez.co.uk/writing/burden-of-proof/","datePublished":"2026-11-08","inLanguage":"en-GB","image":"https://oscarmendez.co.uk/og-image.png","author":{"@type":"Person","@id":"https://oscarmendez.co.uk/#person","name":"Dr Oscar Mendez"},"isPartOf":{"@id":"https://oscarmendez.co.uk/#website"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap">
+<style>
+:root{--bg:#0A1322;--surface:#111C30;--line:#22304A;--text:#E7ECF4;--muted:#93A0B8;--accent:#F2A93B;--accent-ink:#1A1206;--cool:#6FA8FF;--grn:#5FD39A;--amb:#F2A93B;--red:#FF6B6B;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,::before,::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Archivo,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-variation-settings:"wdth" 100;font-size:1.0625rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--accent);color:var(--accent-ink);padding:.5rem .75rem;z-index:20}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.brand{text-decoration:none;font-weight:700;font-variation-settings:"wdth" 118;letter-spacing:-.01em;font-size:1.05rem}
+.brand span{color:var(--muted);font-weight:400}
+nav.main ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+nav.main a{display:block;text-decoration:none;color:var(--muted);padding:.45rem .7rem;border-radius:6px;font-size:.95rem}
+nav.main a:hover,nav.main a[aria-current]{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:600;font-size:.95rem;padding:.7rem 1.1rem;border-radius:8px;border:1px solid var(--line);color:var(--text);background:transparent;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--muted)}
+.btn.small{padding:.45rem .8rem;font-size:.88rem}
+.menu-toggle{display:none}
+@media (max-width:860px){.menu-toggle{display:inline-flex}nav.main{position:absolute;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);display:none}nav.main.open{display:block}nav.main ul{flex-direction:column;padding:.5rem clamp(1.25rem,4vw,2.5rem) 1rem}.bar .cv-link{display:none}}
+h1,h2,h3{font-variation-settings:"wdth" 118;letter-spacing:-.02em;line-height:1.08;margin:0}
+h1{font-size:clamp(2.3rem,5.5vw,4rem);font-weight:700;max-width:18ch}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:650;margin:clamp(3rem,6vw,4.5rem) 0 1rem}
+p{margin:0 0 1rem;max-width:68ch}
+.muted{color:var(--muted)}
+.page-top{padding-top:clamp(3.5rem,8vw,6rem);padding-bottom:clamp(2rem,4vw,3rem)}
+.kicker{color:var(--accent);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:600;margin-bottom:1rem}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--muted);max-width:56ch;margin-top:1.25rem}
+.byline{margin-top:1.5rem;color:var(--muted);font-size:.95rem}
+.byline b{color:var(--text);font-weight:600}
+article{border-top:1px solid var(--line);padding:clamp(2.5rem,6vw,4rem) 0 clamp(3.5rem,8vw,6rem)}
+article .col{max-width:760px}
+article p a{text-decoration-color:var(--accent);text-underline-offset:3px}
+.bridge{color:var(--text);font-weight:650;font-variation-settings:"wdth" 112;margin-top:2rem}
+.quote{border-left:3px solid var(--accent);padding:.25rem 0 .25rem 1.25rem;font-size:clamp(1.3rem,2.4vw,1.6rem);font-variation-settings:"wdth" 112;font-weight:600;letter-spacing:-.01em;line-height:1.3;margin:2.5rem 0;max-width:30ch}
+figure{margin:2rem 0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(1rem,3vw,1.5rem)}
+figcaption{color:var(--muted);font-size:.85rem;margin-top:.9rem}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}.flow{animation:none}}
+.ladder{display:grid;gap:10px}
+.rung{display:grid;grid-template-columns:120px 1fr 1fr;gap:14px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.rung .lvl{font-weight:700;font-variation-settings:"wdth" 112}.rung .lvl small{display:block;color:var(--accent);font-weight:500;font-size:.75rem}
+.rung .b{font-size:.9rem;color:var(--muted)}.rung .b b{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.rung .broken b{color:var(--red)}.rung .fix b{color:var(--grn)}
+.r1{margin-left:0}.r2{margin-left:3%}.r3{margin-left:6%}.r4{margin-left:9%}.r5{margin-left:12%}
+@media (max-width:640px){.rung{grid-template-columns:1fr}.r2,.r3,.r4,.r5{margin-left:0}}
+svg text{font-family:inherit}
+.legend{display:flex;gap:16px;font-size:.78rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.node{cursor:pointer}.node:hover{filter:brightness(1.25)}
+#panel{min-height:64px;font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);margin-top:12px;padding-top:12px}
+#panel b{font-weight:650}
+.flow{stroke-dasharray:6 6;animation:dash 1.2s linear infinite}@keyframes dash{to{stroke-dashoffset:-12}}
+ul.reading{list-style:none;padding:0;margin:0;max-width:68ch}
+ul.reading li{padding:.9rem 0;border-top:1px solid var(--line);font-size:.95rem}
+ul.reading li:last-child{border-bottom:1px solid var(--line)}
+ul.reading a{text-decoration:none}ul.reading a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.note{color:var(--muted);font-size:.85rem;margin-top:2.5rem}
+footer.site{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer.site a{color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="/">Oscar Mendez <span>PhD</span></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/leadership/">Leadership</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/media/">Media &amp; talks</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:.5rem">
+      <a class="btn small cv-link" href="/OscarMendezCV.pdf" download>Download CV</a>
+      <button class="btn small menu-toggle" aria-expanded="false" aria-controls="nav" id="menuBtn">Menu</button>
+    </div>
+  </div>
+</header>
+<main id="content">
+<div class="wrap">
+  <div class="page-top">
+    <div class="kicker">Physical AI · Engineering leadership</div>
+    <h1>The burden of proof should be on the AI</h1>
+    <p class="lede">How engineering practice needs to change to adopt AI for software development in physical AI.</p>
+    <p class="byline"><b>Dr Oscar Mendez</b> · November 2026</p>
+  </div>
+  <article><div class="col">
+<p>No engineering manager signs off a software release by reading every line of code. They sign off on evidence: test results, a demo, a clear account of what changed and why. The manager lays down the criteria, but the team carries the burden of convincing them. However, software developers managing agents still operate on a fundamentally broken system: we expect them to carry the burden of verifying the code. To do so, they receive raw, unverified code and are expected to understand it and validate it. The same is true from junior developers to senior management: the burden of proof is on the human. We get raw AI artefacts, no context, and a burden of proof that is bound to reach a breaking point.</p>
+<p>Let’s face it: in the AI coding era, every engineer is now in a manager's position to some degree, even at entry level. They are managing an increasing number of agents, and are expected to validate all the work they produce. As we go up the seniority ladder, we are still trying to keep up with the sheer amount of stuff AI produces. Proofreading, correcting, ensuring accuracy.</p>
+<p>In physical AI, every code change goes out to live production sites. In warehouse logistics, a single change can move a customer's pick rates, throughput or uptime. Customers care about that, and about safety, as much as any regulator does.</p>
+<p>And so, engineering leaders are under two pressures right now. The first is productivity. Every organisation wants to become AI-native, and that means shipping more with the same or smaller teams. The second is accountability. Under the EU AI Act, the Cyber Resilience Act and the updated Product Liability Directive, it doesn't matter who or what wrote the code. What matters is what it does. The same is true for customers.</p>
+<p>This is where the two pressures meet. Code moves robots through warehouses where people work. A bad change is not a broken web page. It can mean damage, injury, legal exposure or a customer's operation falling behind.</p>
+<p class="bridge">The problem, then, is how do we get the benefits and speed of AI without reducing quality and safety?</p>
+<p>Most organisations are approaching this AI-native problem by adding AI tools to existing ways of working. That gets you speed, but it does not ensure safety and accountability. This may be OK for cloud-native infrastructure, but in physical AI, it has real consequences.</p>
+<p>So far, the standard answer has been to keep a human in the loop. However, I don't think that holds up under productivity targets. AI produces code faster than people can read it, so reviewers have two options: they can hold the line and become the bottleneck, in which case productivity pressure will eventually push them out. Or they can approve what they're given, and become yes-men with their name on the sign-off. In both cases there is an appearance of accountability without the real thing. I don’t think I’m alone in this: some of the research community is now arguing that mandatory line-by-line human review is no longer a stable endpoint (<a href="https://arxiv.org/abs/2606.13175">Monperrus, 2026</a>).</p>
+<div class="quote fade">The burden of proof should be on the AI, not on the person signing off.</div>
+<p>I think we should do the exact opposite. Instead of the developer proving the AI wrong, the AI should prove itself right, the same way a good team does. Instead of raw output, it should bring evidence: what it was trying to achieve, how it was tested, and what the robot will actually do. That doesn't change who is accountable, but it changes who does the work of convincing and gathering evidence.</p>
+<p class="bridge">So how do we do it?</p>
+
+<h2 class="fade">The feedback loop depends on seniority</h2>
+<p>Everyone works with AI, but at different levels. The more junior you are, the tighter the loop. The more senior, the larger the unit you're checking.</p>
+<figure class="fade"><div class="ladder">
+ <div class="rung r5"><div class="lvl">VP<small>Strategy</small></div><div class="b broken"><b>Broken today</b>No cohesive way to grasp the complexity of what the organisation is building.</div><div class="b fix"><b>Make the AI earn it</b>Research agents map competitor gaps, cluster tickets into initiatives, and produce decks and docs the team can act on.</div></div>
+ <div class="rung r4"><div class="lvl">Director<small>Initiatives</small></div><div class="b broken"><b>Broken today</b>You can inspect the code or architecture, but nothing proves it solves the business problem.</div><div class="b fix"><b>Make the AI earn it</b>Requirements pulled from Salesforce and Aha! become objects the AI argues against, traced to code and evidence. KPIs tracked and evidenced.</div></div>
+ <div class="rung r3"><div class="lvl">Manager<small>Architecture</small></div><div class="b broken"><b>Broken today</b>Status boards show which tickets closed, not whether the pieces still fit together.</div><div class="b fix"><b>Make the AI earn it</b>Architecture reviews where the AI presents the design, its trade-offs and the components it touches, linked to each senior engineer's evidence.</div></div>
+ <div class="rung r2"><div class="lvl">Senior<small>Systems</small></div><div class="b broken"><b>Broken today</b>Isolated PRs across many repos, no view of how they interact without hours of work.</div><div class="b fix"><b>Make the AI earn it</b>A graph of every repo, plain-language summaries, and expert agents per component that answer with evidence.</div></div>
+ <div class="rung r1"><div class="lvl">Junior<small>Code blocks</small></div><div class="b broken"><b>Broken today</b>Complex code blocks and paradigms. Permission prompts for arcane atomic commands: read every line, or reject.</div><div class="b fix"><b>Make the AI earn it</b>Plain-language intent first, backed by tests, a sim run and a visual of what the robot will do. Effectively a first-level manager of AI agents, but still closest to the code and responsible for its correctness.</div></div>
+</div><figcaption>The altitude ladder: the review unit grows with seniority, but the rule stays the same.</figcaption></figure>
+
+<h2 class="fade">What “earned” evidence looks like</h2>
+<p>For a senior engineer, the change arrives as one system view rather than a pile of PRs. Click a component to question its expert agent.</p>
+<figure class="fade">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="Illustrative system graph of five components">
+ <g stroke="#22304A" stroke-width="2" fill="none">
+  <path d="M150 80 L380 60"/><path d="M150 80 L250 210"/><path d="M380 60 L600 90"/><path d="M380 60 L250 210"/><path d="M250 210 L500 230"/><path d="M600 90 L500 230"/>
+ </g>
+ <path class="flow" d="M380 60 L600 90" stroke="#F2A93B" stroke-width="3" fill="none"/>
+ <path class="flow" d="M250 210 L500 230" stroke="#F2A93B" stroke-width="3" fill="none"/>
+ <g id="nodes"></g>
+</svg>
+<div id="panel" class="mut">Select a component.</div>
+<div class="legend"><span><span class="dot" style="background:var(--grn)"></span>Evidence complete</span><span><span class="dot" style="background:var(--amb)"></span>Evidence thin</span><span><span class="dot" style="background:var(--red)"></span>Unvalidated</span><span><span class="dot" style="background:var(--amb);border-radius:2px"></span>Interface changed</span></div>
+<figcaption>Illustrative mock-up of a generic robot software stack. Components, changes and figures are invented examples.</figcaption></figure>
+
+<h2 class="fade">Visualisation is the evidence</h2>
+<p>One thing research taught me is how powerful visualisation is. It's often the fastest way to find what the numbers don't show. We used it extensively in research, but it used to be expensive to build. With AI, it's cheap. There is no reason not to make AI produce crisp, rich visuals that you can use as evidence and share among team members. Every level should get evidence it can see: robot trajectories for a junior, system graphs for a senior, traceability for a director, a strategic view for a VP.</p>
+<p class="bridge">So we’ve got the view. How does accountability work?</p>
+
+<h2 class="fade">Validation follows the organisation</h2>
+<p>Responsibility for checking AI output should follow the hierarchy. What comes back up is not detail but confidence.</p>
+<figure class="fade">
+<svg viewBox="0 0 760 360" width="100%" id="cascade" role="img" aria-label="Validation cascade from VP to junior"></svg>
+<figcaption>Responsibility is delegated down; confidence rolls up. The weakest link sets the rating, and the AI keeps the ledger.</figcaption></figure>
+<p>The VP collects the strategy and evidence and delegates the sanity check of each area to directors. Directors break their area into an architecture, which managers check. Senior engineers validate the technical side, such as connectors, APIs and principles, and own behaviours and safety. Junior engineers own the code itself: errors, crashes and failure handling. At every level, the AI agents are specialised to the level of detail each role needs.</p>
+<p>Each sign-off links to its evidence. The weakest part sets the overall rating. Issues only escalate when they cross a boundary. The AI keeps a record of who validated what, when, and against which evidence, which gives you an audit trail for safety and liability.</p>
+
+<h2 class="fade">Summary</h2>
+<p>AI changes who writes the code. It doesn't change who is accountable for it.</p>
+<div class="quote fade">In physical AI, accountability is not a cost on top of AI-native productivity. It is what we deliver.</div>
+<p><b>We shouldn't ask engineers to trust AI. The AI should have to earn it.</b></p>
+
+<h2 class="fade">Further reading</h2>
+<ul class="reading">
+<li><a href="https://arxiv.org/abs/2606.13175">Monperrus (2026), The End of Code Review: Coding Agents Supersede Human Inspection</a></li>
+<li><a href="https://arxiv.org/html/2610.08651v1">A Case Study in Assuring AI-Written Software (2026)</a></li>
+<li><a href="https://law.stanford.edu/2026/07/28/world-foundation-models-and-the-oversight-of-physical-ai/">Stanford CodeX: World Foundation Models and the Oversight of Physical AI</a></li>
+<li><a href="https://addyosmani.com/blog/code-review-ai/">Addy Osmani: AI writes code faster. Your job is still to prove it works</a></li>
+</ul>
+
+<p class="note">Views are my own.</p>
+  </div></article>
+</div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dr Oscar Mendez Maldonado</span>
+    <span><a href="mailto:me@oscarmendez.co.uk">Email</a> &nbsp; <a href="https://www.linkedin.com/in/oscarmendez89" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a href="https://github.com/oscarmendezm" target="_blank" rel="noopener">GitHub</a> &nbsp; <a href="https://scholar.google.co.uk/citations?user=Vm8E3pYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> &nbsp; <a href="https://orcid.org/0000-0003-4904-4349" target="_blank" rel="noopener">ORCID</a></span>
+  </div>
+</footer>
+<script>
+const C={g:'#5FD39A',a:'#F2A93B',r:'#FF6B6B'};
+const nodes=[
+ {x:150,y:80,n:'Perception',prs:4,s:'g',d:'Model update to reduce false stops. Simulation regression suite passed; safety envelope unchanged.'},
+ {x:380,y:60,n:'Planning',prs:7,s:'a',d:'New path-cost interface shared with Orchestration. Expert agent: “Unit and sim tests pass, but only 2 of 5 mixed-traffic scenarios are covered. Recommend adding coverage.”'},
+ {x:600,y:90,n:'Orchestration',prs:3,s:'g',d:'Adopted the new path-cost interface. Integration tests green across all test configurations.'},
+ {x:250,y:210,n:'Safety',prs:2,s:'r',d:'Speed limits changed. Not yet validated by a senior owner, so the whole initiative rolls up as red.'},
+ {x:500,y:230,n:'Integration',prs:5,s:'a',d:'External system connector updated for new task priorities. Customer KPI impact estimated; awaiting replay against historical logs.'}];
+const g=document.getElementById('nodes'),panel=document.getElementById('panel');
+nodes.forEach(o=>{const e=document.createElementNS('http://www.w3.org/2000/svg','g');e.setAttribute('class','node');
+e.innerHTML=`<circle cx="${o.x}" cy="${o.y}" r="38" fill="#0A1322" stroke="${C[o.s]}" stroke-width="3"/><text x="${o.x}" y="${o.y-2}" fill="#E7ECF4" font-size="12" text-anchor="middle">${o.n}</text><text x="${o.x}" y="${o.y+14}" fill="#93A0B8" font-size="11" text-anchor="middle">${o.prs} PRs</text>`;
+e.addEventListener('click',()=>panel.innerHTML=`<b style="color:${C[o.s]}">${o.n}</b> · ${o.prs} PRs<br>${o.d}`);g.appendChild(e)});
+const lv=[['VP','Strategy & evidence','a'],['Director','Component → architecture','a'],['Manager','Architecture sanity check','g'],['Senior','APIs, behaviours, safety','r'],['Junior','Lines of code, errors, crashes','g']];
+const s=document.getElementById('cascade');let h='<defs><marker id="m" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#6FA8FF"/></marker><marker id="m2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#F2A93B"/></marker></defs>';
+lv.forEach((l,i)=>{const y=20+i*68;h+=`<rect x="200" y="${y}" width="360" height="48" rx="10" fill="#0A1322" stroke="#22304A"/><circle cx="530" cy="${y+24}" r="8" fill="${C[l[2]]}"/><text x="220" y="${y+21}" fill="#E7ECF4" font-size="15" font-weight="700">${l[0]}</text><text x="220" y="${y+39}" fill="#93A0B8" font-size="12">${l[1]}</text>`;
+if(i<4){h+=`<path class="flow" d="M180 ${y+30} L180 ${y+86}" stroke="#6FA8FF" stroke-width="2" marker-end="url(#m)"/><path class="flow" d="M580 ${y+86} L580 ${y+30}" stroke="#F2A93B" stroke-width="2" marker-end="url(#m2)"/>`}});
+h+='<text x="170" y="350" fill="#6FA8FF" font-size="12" text-anchor="end">Responsibility delegated ↓</text><text x="590" y="350" fill="#F2A93B" font-size="12">Confidence rolls up ↑</text>';
+s.innerHTML=h;
+try{const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));}catch(e){document.querySelectorAll('.fade').forEach(el=>el.classList.add('in'))}
+</script>
+<script>
+(function(){var n=document.getElementById('nav'),b=document.getElementById('menuBtn');if(b)b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});})();
+</script>
+</body>
+</html>

@@ -200,6 +200,7 @@ footer.site a{color:var(--muted)}
         <li><a href="/leadership/" data-link="leadership">Leadership</a></li>
         <li><a href="/research/" data-link="research">Research</a></li>
         <li><a href="/publications/" data-link="publications">Publications</a></li>
+        <li><a href="/writing/" data-link="writing">Writing</a></li>
         <li><a href="/media/" data-link="media">Media &amp; talks</a></li>
       </ul>
     </nav>
@@ -254,7 +255,7 @@ footer.site a{color:var(--muted)}
   // ---------- router ----------
   var pages=document.querySelectorAll('.page'), links=document.querySelectorAll('[data-link]');
   var nav=document.getElementById('nav'), menuBtn=document.getElementById('menuBtn');
-  var titles={home:'Physical AI leader',leadership:'Leadership',research:'Research',publications:'Publications',media:'Media and talks'};
+  var titles={home:'Physical AI leader',leadership:'Leadership',research:'Research',publications:'Publications',writing:'Writing',media:'Media and talks'};
   var STATIC=document.body.dataset.static==='1';
   function route(){
     var key=STATIC?document.body.dataset.page:(location.hash.replace(/^#\/?/,'')||'home');
