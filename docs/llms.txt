@@ -1,6 +1,6 @@
 # Dr Oscar Mendez
 
-> Dr Oscar Mendez (Oscar Mendez Maldonado) is a physical AI leader based in Surrey, UK. He is Director of AI & Data Science at Locus Robotics, where he leads AI for an autonomous mobile robot fleet operating at more than 350 sites worldwide, and a Visiting Associate Professor in Robotics and AI at the University of Surrey's Centre for Vision, Speech and Signal Processing (CVSSP).
+> Dr Oscar Mendez (Oscar Mendez Maldonado) is a physical AI leader based in Surrey, UK. He is Director of AI & Data Science at Locus Robotics, where he leads AI for an autonomous mobile robot fleet operating at more than 360 sites worldwide, and a Visiting Associate Professor in Robotics and AI at the University of Surrey's Centre for Vision, Speech and Signal Processing (CVSSP).
 
 Key facts:
 

@@ -50,7 +50,8 @@ p{margin:0 0 1rem;max-width:68ch}
 .byline{margin-top:1.5rem;color:var(--muted);font-size:.95rem}
 .byline b{color:var(--text);font-weight:600}
 article{border-top:1px solid var(--line);padding:clamp(2.5rem,6vw,4rem) 0 clamp(3.5rem,8vw,6rem)}
-article .col{max-width:760px}
+article .col{max-width:960px}
+article .col p,article .col ul.reading{max-width:none}
 article p a{text-decoration-color:var(--accent);text-underline-offset:3px}
 .bridge{color:var(--text);font-weight:650;font-variation-settings:"wdth" 112;margin-top:2rem}
 .quote{border-left:3px solid var(--accent);padding:.25rem 0 .25rem 1.25rem;font-size:clamp(1.3rem,2.4vw,1.6rem);font-variation-settings:"wdth" 112;font-weight:600;letter-spacing:-.01em;line-height:1.3;margin:2.5rem 0;max-width:30ch}
@@ -114,12 +115,12 @@ footer.site a{color:var(--muted)}
   <article><div class="col">
 <p>No engineering manager signs off a software release by reading every line of code. They sign off on evidence: test results, a demo, a clear account of what changed and why. The manager lays down the criteria, but the team carries the burden of convincing them. However, software developers managing agents still operate on a fundamentally broken system: we expect them to carry the burden of verifying the code. To do so, they receive raw, unverified code and are expected to understand it and validate it. The same is true from junior developers to senior management: the burden of proof is on the human. We get raw AI artefacts, no context, and a burden of proof that is bound to reach a breaking point.</p>
 <p>Let’s face it: in the AI coding era, every engineer is now in a manager's position to some degree, even at entry level. They are managing an increasing number of agents, and are expected to validate all the work they produce. As we go up the seniority ladder, we are still trying to keep up with the sheer amount of stuff AI produces. Proofreading, correcting, ensuring accuracy.</p>
-<p>In physical AI, every code change goes out to live production sites. In warehouse logistics, a single change can move a customer's pick rates, throughput or uptime. Customers care about that, and about safety, as much as any regulator does.</p>
-<p>And so, engineering leaders are under two pressures right now. The first is productivity. Every organisation wants to become AI-native, and that means shipping more with the same or smaller teams. The second is accountability. Under the EU AI Act, the Cyber Resilience Act and the updated Product Liability Directive, it doesn't matter who or what wrote the code. What matters is what it does. The same is true for customers.</p>
+<p>In physical AI, code changes ultimately reach live production sites. In warehouse logistics, a single change can move a customer's pick rates, throughput or uptime. Customers care about that, and about safety, as much as any regulator does.</p>
+<p>And so, engineering leaders are under two pressures right now. The first is productivity. Every organisation wants to become AI-native, and that means shipping more with the same or smaller teams. The second is accountability. Regulation is moving the same way: under the EU AI Act, the Cyber Resilience Act and the updated Product Liability Directive, responsibility increasingly attaches to what a product does, not to who or what wrote its code. Customers take the same view.</p>
 <p>This is where the two pressures meet. Code moves robots through warehouses where people work. A bad change is not a broken web page. It can mean damage, injury, legal exposure or a customer's operation falling behind.</p>
 <p class="bridge">The problem, then, is how do we get the benefits and speed of AI without reducing quality and safety?</p>
-<p>Most organisations are approaching this AI-native problem by adding AI tools to existing ways of working. That gets you speed, but it does not ensure safety and accountability. This may be OK for cloud-native infrastructure, but in physical AI, it has real consequences.</p>
-<p>So far, the standard answer has been to keep a human in the loop. However, I don't think that holds up under productivity targets. AI produces code faster than people can read it, so reviewers have two options: they can hold the line and become the bottleneck, in which case productivity pressure will eventually push them out. Or they can approve what they're given, and become yes-men with their name on the sign-off. In both cases there is an appearance of accountability without the real thing. I don’t think I’m alone in this: some of the research community is now arguing that mandatory line-by-line human review is no longer a stable endpoint (<a href="https://arxiv.org/abs/2606.13175">Monperrus, 2026</a>).</p>
+<p>Across the industry, most organisations are approaching this AI-native problem by adding AI tools to existing ways of working. That gets you speed, but it does not ensure safety and accountability. This may be OK for cloud-native infrastructure, but in physical AI, it has real consequences.</p>
+<p>So far, the standard answer has been to keep a human in the loop. However, I don't think that holds up under productivity targets. AI produces code faster than people can read it, and the pattern I see across the industry is that reviewers are left with two options: they can hold the line and become the bottleneck, in which case productivity pressure will eventually push them out. Or they can approve what they're given, and become yes-men with their name on the sign-off. In both cases there is an appearance of accountability without the real thing. I don’t think I’m alone in this: some of the research community is now arguing that mandatory line-by-line human review is no longer a stable endpoint (<a href="https://arxiv.org/abs/2606.13175">Monperrus, 2026</a>).</p>
 <div class="quote fade">The burden of proof should be on the AI, not on the person signing off.</div>
 <p>I think we should do the exact opposite. Instead of the developer proving the AI wrong, the AI should prove itself right, the same way a good team does. Instead of raw output, it should bring evidence: what it was trying to achieve, how it was tested, and what the robot will actually do. That doesn't change who is accountable, but it changes who does the work of convincing and gathering evidence.</p>
 <p class="bridge">So how do we do it?</p>
@@ -128,7 +129,7 @@ footer.site a{color:var(--muted)}
 <p>Everyone works with AI, but at different levels. The more junior you are, the tighter the loop. The more senior, the larger the unit you're checking.</p>
 <figure class="fade"><div class="ladder">
  <div class="rung r5"><div class="lvl">VP<small>Strategy</small></div><div class="b broken"><b>Broken today</b>No cohesive way to grasp the complexity of what the organisation is building.</div><div class="b fix"><b>Make the AI earn it</b>Research agents map competitor gaps, cluster tickets into initiatives, and produce decks and docs the team can act on.</div></div>
- <div class="rung r4"><div class="lvl">Director<small>Initiatives</small></div><div class="b broken"><b>Broken today</b>You can inspect the code or architecture, but nothing proves it solves the business problem.</div><div class="b fix"><b>Make the AI earn it</b>Requirements pulled from Salesforce and Aha! become objects the AI argues against, traced to code and evidence. KPIs tracked and evidenced.</div></div>
+ <div class="rung r4"><div class="lvl">Senior manager<small>Initiatives</small></div><div class="b broken"><b>Broken today</b>You can inspect the code or architecture, but nothing proves it solves the business problem.</div><div class="b fix"><b>Make the AI earn it</b>Requirements pulled from the CRM and product-roadmap tools become objects the AI argues against, traced to code and evidence. KPIs tracked and evidenced.</div></div>
  <div class="rung r3"><div class="lvl">Manager<small>Architecture</small></div><div class="b broken"><b>Broken today</b>Status boards show which tickets closed, not whether the pieces still fit together.</div><div class="b fix"><b>Make the AI earn it</b>Architecture reviews where the AI presents the design, its trade-offs and the components it touches, linked to each senior engineer's evidence.</div></div>
  <div class="rung r2"><div class="lvl">Senior<small>Systems</small></div><div class="b broken"><b>Broken today</b>Isolated PRs across many repos, no view of how they interact without hours of work.</div><div class="b fix"><b>Make the AI earn it</b>A graph of every repo, plain-language summaries, and expert agents per component that answer with evidence.</div></div>
  <div class="rung r1"><div class="lvl">Junior<small>Code blocks</small></div><div class="b broken"><b>Broken today</b>Complex code blocks and paradigms. Permission prompts for arcane atomic commands: read every line, or reject.</div><div class="b fix"><b>Make the AI earn it</b>Plain-language intent first, backed by tests, a sim run and a visual of what the robot will do. Effectively a first-level manager of AI agents, but still closest to the code and responsible for its correctness.</div></div>
@@ -150,7 +151,7 @@ footer.site a{color:var(--muted)}
 <figcaption>Illustrative mock-up of a generic robot software stack. Components, changes and figures are invented examples.</figcaption></figure>
 
 <h2 class="fade">Visualisation is the evidence</h2>
-<p>One thing research taught me is how powerful visualisation is. It's often the fastest way to find what the numbers don't show. We used it extensively in research, but it used to be expensive to build. With AI, it's cheap. There is no reason not to make AI produce crisp, rich visuals that you can use as evidence and share among team members. Every level should get evidence it can see: robot trajectories for a junior, system graphs for a senior, traceability for a director, a strategic view for a VP.</p>
+<p>One thing research taught me is how powerful visualisation is. It's often the fastest way to find what the numbers don't show. We used it extensively in research, but it used to be expensive to build. With AI, it's cheap. There is no reason not to make AI produce crisp, rich visuals that you can use as evidence and share among team members. Every level should get evidence it can see: robot trajectories for a junior, system graphs for a senior, traceability for a senior manager, a strategic view for a VP.</p>
 <p class="bridge">So we’ve got the view. How does accountability work?</p>
 
 <h2 class="fade">Validation follows the organisation</h2>
@@ -158,7 +159,7 @@ footer.site a{color:var(--muted)}
 <figure class="fade">
 <svg viewBox="0 0 760 360" width="100%" id="cascade" role="img" aria-label="Validation cascade from VP to junior"></svg>
 <figcaption>Responsibility is delegated down; confidence rolls up. The weakest link sets the rating, and the AI keeps the ledger.</figcaption></figure>
-<p>The VP collects the strategy and evidence and delegates the sanity check of each area to directors. Directors break their area into an architecture, which managers check. Senior engineers validate the technical side, such as connectors, APIs and principles, and own behaviours and safety. Junior engineers own the code itself: errors, crashes and failure handling. At every level, the AI agents are specialised to the level of detail each role needs.</p>
+<p>The VP collects the strategy and evidence and delegates the sanity check of each area to senior managers. Senior managers break their area into an architecture, which managers check. Senior engineers validate the technical side, such as connectors, APIs and principles, and own behaviours and safety. Junior engineers own the code itself: errors, crashes and failure handling. At every level, the AI agents are specialised to the level of detail each role needs.</p>
 <p>Each sign-off links to its evidence. The weakest part sets the overall rating. Issues only escalate when they cross a boundary. The AI keeps a record of who validated what, when, and against which evidence, which gives you an audit trail for safety and liability.</p>
 
 <h2 class="fade">Summary</h2>
@@ -172,6 +173,9 @@ footer.site a{color:var(--muted)}
 <li><a href="https://arxiv.org/html/2610.08651v1">A Case Study in Assuring AI-Written Software (2026)</a></li>
 <li><a href="https://law.stanford.edu/2026/07/28/world-foundation-models-and-the-oversight-of-physical-ai/">Stanford CodeX: World Foundation Models and the Oversight of Physical AI</a></li>
 <li><a href="https://addyosmani.com/blog/code-review-ai/">Addy Osmani: AI writes code faster. Your job is still to prove it works</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">Regulation (EU) 2024/1689, the EU AI Act</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">Regulation (EU) 2024/2847, the Cyber Resilience Act</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">Directive (EU) 2024/2853, the updated Product Liability Directive</a></li>
 </ul>
 
 <p class="note">Views are my own.</p>
@@ -188,15 +192,15 @@ footer.site a{color:var(--muted)}
 const C={g:'#5FD39A',a:'#F2A93B',r:'#FF6B6B'};
 const nodes=[
  {x:150,y:80,n:'Perception',prs:4,s:'g',d:'Model update to reduce false stops. Simulation regression suite passed; safety envelope unchanged.'},
- {x:380,y:60,n:'Planning',prs:7,s:'a',d:'New path-cost interface shared with Orchestration. Expert agent: “Unit and sim tests pass, but only 2 of 5 mixed-traffic scenarios are covered. Recommend adding coverage.”'},
- {x:600,y:90,n:'Orchestration',prs:3,s:'g',d:'Adopted the new path-cost interface. Integration tests green across all test configurations.'},
+ {x:380,y:60,n:'Planning',prs:7,s:'a',d:'New path-cost interface shared with Fleet management. Expert agent: “Unit and sim tests pass, but only 2 of 5 mixed-traffic scenarios are covered. Recommend adding coverage.”'},
+ {x:600,y:90,n:'Fleet mgmt',prs:3,s:'g',d:'Adopted the new path-cost interface. Integration tests green across all test configurations.'},
  {x:250,y:210,n:'Safety',prs:2,s:'r',d:'Speed limits changed. Not yet validated by a senior owner, so the whole initiative rolls up as red.'},
  {x:500,y:230,n:'Integration',prs:5,s:'a',d:'External system connector updated for new task priorities. Customer KPI impact estimated; awaiting replay against historical logs.'}];
 const g=document.getElementById('nodes'),panel=document.getElementById('panel');
 nodes.forEach(o=>{const e=document.createElementNS('http://www.w3.org/2000/svg','g');e.setAttribute('class','node');
 e.innerHTML=`<circle cx="${o.x}" cy="${o.y}" r="38" fill="#0A1322" stroke="${C[o.s]}" stroke-width="3"/><text x="${o.x}" y="${o.y-2}" fill="#E7ECF4" font-size="12" text-anchor="middle">${o.n}</text><text x="${o.x}" y="${o.y+14}" fill="#93A0B8" font-size="11" text-anchor="middle">${o.prs} PRs</text>`;
 e.addEventListener('click',()=>panel.innerHTML=`<b style="color:${C[o.s]}">${o.n}</b> · ${o.prs} PRs<br>${o.d}`);g.appendChild(e)});
-const lv=[['VP','Strategy & evidence','a'],['Director','Component → architecture','a'],['Manager','Architecture sanity check','g'],['Senior','APIs, behaviours, safety','r'],['Junior','Lines of code, errors, crashes','g']];
+const lv=[['VP','Strategy & evidence','a'],['Senior manager','Component → architecture','a'],['Manager','Architecture sanity check','g'],['Senior','APIs, behaviours, safety','r'],['Junior','Lines of code, errors, crashes','g']];
 const s=document.getElementById('cascade');let h='<defs><marker id="m" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#6FA8FF"/></marker><marker id="m2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#F2A93B"/></marker></defs>';
 lv.forEach((l,i)=>{const y=20+i*68;h+=`<rect x="200" y="${y}" width="360" height="48" rx="10" fill="#0A1322" stroke="#22304A"/><circle cx="530" cy="${y+24}" r="8" fill="${C[l[2]]}"/><text x="220" y="${y+21}" fill="#E7ECF4" font-size="15" font-weight="700">${l[0]}</text><text x="220" y="${y+39}" fill="#93A0B8" font-size="12">${l[1]}</text>`;
 if(i<4){h+=`<path class="flow" d="M180 ${y+30} L180 ${y+86}" stroke="#6FA8FF" stroke-width="2" marker-end="url(#m)"/><path class="flow" d="M580 ${y+86} L580 ${y+30}" stroke="#F2A93B" stroke-width="2" marker-end="url(#m2)"/>`}});
